@@ -86,11 +86,10 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return
                 "title='" + title + '\'' +
                 ", nPages=" + nPages +
                 ", author='" + author + '\'' +
-                ", publisher='" + publisher + '\'' +
-                '}';
+                ", publisher='" + publisher + '\'';
     }
 }
