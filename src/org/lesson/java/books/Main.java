@@ -36,7 +36,12 @@ public class Main {
             System.out.println(book);
         }
 
-
+//        Book myBook = new Book("prova",23,"prova","prova");
+//        try {
+//            myBook.setnPages(0);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
 
         scan.close();
     }

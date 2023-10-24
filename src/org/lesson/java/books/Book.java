@@ -24,7 +24,7 @@ public class Book {
 
     //VALIDATION
     public void validateTitle() throws IllegalArgumentException {
-        if (title == null || title.trim().isEmpty()){
+        if (title == null || title.isBlank()){
             throw new IllegalArgumentException("The title is mandatory");
         }
     }
@@ -46,7 +46,6 @@ public class Book {
             throw new IllegalArgumentException("The publisher is mandatory");
         }
     }
-
     
     // METHODS
     public String getTitle() {
