@@ -10,6 +10,7 @@ public class Book {
     
     //  CONSTRUCTORS
     public Book(String title, int nPages, String author, String publisher) {
+
         this.title = title;
         this.nPages = nPages;
         this.author = author;
@@ -23,7 +24,7 @@ public class Book {
 
     //VALIDATION
     public void validateTitle() throws IllegalArgumentException {
-        if (title == null){
+        if (title == null || title.trim().isEmpty()){
             throw new IllegalArgumentException("The title is mandatory");
         }
     }
@@ -35,13 +36,13 @@ public class Book {
     }
 
     public void validateAuthor() throws IllegalArgumentException {
-        if (author == null){
+        if (author == null || author.trim().isEmpty()){
             throw new IllegalArgumentException("The author is mandatory");
         }
     }
 
     public void validatePublisher() throws IllegalArgumentException{
-        if (publisher == null){
+        if (publisher == null || publisher.trim().isEmpty()){
             throw new IllegalArgumentException("The publisher is mandatory");
         }
     }
