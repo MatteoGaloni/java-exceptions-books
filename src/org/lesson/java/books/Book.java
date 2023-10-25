@@ -9,20 +9,38 @@ public class Book {
     String publisher;
     
     //  CONSTRUCTORS
-    public Book(String title, int nPages, String author, String publisher) {
+    public Book(String title, int nPages, String author, String publisher) throws IllegalArgumentException {
+
+
+        validateString(title, "title");
+        validateNumber(nPages, "nPages");
+        validateString(author, "author");
+        validateString(publisher, "publisher");
 
         this.title = title;
         this.nPages = nPages;
         this.author = author;
         this.publisher = publisher;
 
-        validateTitle();
-        validatenPages();
-        validateAuthor();
-        validatePublisher();
     }
 
     //VALIDATION
+
+//    metodo generico per la validazione refactor
+    private void validateString(String input, String inputName) throws IllegalArgumentException {
+        if (input == null || input.isBlank()){
+            throw new IllegalArgumentException("The " + inputName + " is mandatory (blank or null)");
+        }
+    }
+
+    private void validateNumber(int input, String inputName) throws IllegalArgumentException {
+        if (input <= 0){
+            throw new IllegalArgumentException("The " + inputName + " is invalid (<= 0)");
+        }
+    }
+
+    // metodi usati nei setter, potrei usare i metodi generici sopra
+
     public void validateTitle() throws IllegalArgumentException {
         if (title == null || title.isBlank()){
             throw new IllegalArgumentException("The title is mandatory");
